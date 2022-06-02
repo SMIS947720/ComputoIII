@@ -1,0 +1,29 @@
+{{>header}}
+<h1>{{viewTitle}}</h1>
+
+<a href="/brand">New Brand</a>
+
+<table class="table">
+  <thead>
+    <tr>
+    
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each list}}
+    <tr>
+      <td>{{this.name}}</td>
+      <td>{{this.description}}</td>
+      <td> 
+          <a href="/brand/{{this._id}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Edit</a>
+          <a href="/brand/delete/{{this._id}}"
+          onclick="return confirm('Esta seguro de eliminar?');"
+          class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Delete</a>
+      </td>
+    </tr>
+   {{/each}}
+  </tbody>
+</table>
